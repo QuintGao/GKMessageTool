@@ -14,9 +14,9 @@
 		60E92A101E33242600ABB45A /* GKMessageToolDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E92A0F1E33242600ABB45A /* GKMessageToolDemoTests.m */; };
 		60E92A1B1E33242600ABB45A /* GKMessageToolDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E92A1A1E33242600ABB45A /* GKMessageToolDemoUITests.m */; };
 		60E92A2F1E33382400ABB45A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60E92A2E1E33382400ABB45A /* Main.storyboard */; };
-		60E92A341E33384900ABB45A /* GKMessageTool.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 60E92A311E33384900ABB45A /* GKMessageTool.bundle */; };
-		60E92A351E33384900ABB45A /* GKMessageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E92A331E33384900ABB45A /* GKMessageTool.m */; };
 		60E92A381E33386300ABB45A /* GKMessageToolDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E92A371E33386300ABB45A /* GKMessageToolDemoVC.m */; };
+		60E92A3D1E333AC000ABB45A /* GKMessageTool.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 60E92A3A1E333AC000ABB45A /* GKMessageTool.bundle */; };
+		60E92A3E1E333AC000ABB45A /* GKMessageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E92A3C1E333AC000ABB45A /* GKMessageTool.m */; };
 		F8EBFC637F70DC887E75C335 /* libPods-GKMessageToolDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E367409B288787BEE193E0CE /* libPods-GKMessageToolDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -53,11 +53,11 @@
 		60E92A1A1E33242600ABB45A /* GKMessageToolDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKMessageToolDemoUITests.m; sourceTree = "<group>"; };
 		60E92A1C1E33242600ABB45A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60E92A2E1E33382400ABB45A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		60E92A311E33384900ABB45A /* GKMessageTool.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GKMessageTool.bundle; sourceTree = "<group>"; };
-		60E92A321E33384900ABB45A /* GKMessageTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKMessageTool.h; sourceTree = "<group>"; };
-		60E92A331E33384900ABB45A /* GKMessageTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKMessageTool.m; sourceTree = "<group>"; };
 		60E92A361E33386300ABB45A /* GKMessageToolDemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKMessageToolDemoVC.h; sourceTree = "<group>"; };
 		60E92A371E33386300ABB45A /* GKMessageToolDemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKMessageToolDemoVC.m; sourceTree = "<group>"; };
+		60E92A3A1E333AC000ABB45A /* GKMessageTool.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GKMessageTool.bundle; sourceTree = "<group>"; };
+		60E92A3B1E333AC000ABB45A /* GKMessageTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKMessageTool.h; sourceTree = "<group>"; };
+		60E92A3C1E333AC000ABB45A /* GKMessageTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKMessageTool.m; sourceTree = "<group>"; };
 		A6629553288BE6AE9B0997C5 /* Pods-GKMessageToolDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GKMessageToolDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-GKMessageToolDemo/Pods-GKMessageToolDemo.release.xcconfig"; sourceTree = "<group>"; };
 		E367409B288787BEE193E0CE /* libPods-GKMessageToolDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GKMessageToolDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -122,7 +122,7 @@
 		60E929F41E33242600ABB45A /* GKMessageToolDemo */ = {
 			isa = PBXGroup;
 			children = (
-				60E92A301E33384900ABB45A /* GKMessageTool */,
+				60E92A391E333AC000ABB45A /* GKMessageTool */,
 				60E929F81E33242600ABB45A /* AppDelegate.h */,
 				60E929F91E33242600ABB45A /* AppDelegate.m */,
 				60E92A361E33386300ABB45A /* GKMessageToolDemoVC.h */,
@@ -162,16 +162,15 @@
 			path = GKMessageToolDemoUITests;
 			sourceTree = "<group>";
 		};
-		60E92A301E33384900ABB45A /* GKMessageTool */ = {
+		60E92A391E333AC000ABB45A /* GKMessageTool */ = {
 			isa = PBXGroup;
 			children = (
-				60E92A311E33384900ABB45A /* GKMessageTool.bundle */,
-				60E92A321E33384900ABB45A /* GKMessageTool.h */,
-				60E92A331E33384900ABB45A /* GKMessageTool.m */,
+				60E92A3A1E333AC000ABB45A /* GKMessageTool.bundle */,
+				60E92A3B1E333AC000ABB45A /* GKMessageTool.h */,
+				60E92A3C1E333AC000ABB45A /* GKMessageTool.m */,
 			);
-			name = GKMessageTool;
-			path = ../../GKMessageTool;
-			sourceTree = "<group>";
+			path = GKMessageTool;
+			sourceTree = SOURCE_ROOT;
 		};
 		F21DAC4280487B9C01410ABD /* Frameworks */ = {
 			isa = PBXGroup;
@@ -294,7 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60E92A051E33242600ABB45A /* LaunchScreen.storyboard in Resources */,
-				60E92A341E33384900ABB45A /* GKMessageTool.bundle in Resources */,
+				60E92A3D1E333AC000ABB45A /* GKMessageTool.bundle in Resources */,
 				60E92A021E33242600ABB45A /* Assets.xcassets in Resources */,
 				60E92A2F1E33382400ABB45A /* Main.storyboard in Resources */,
 			);
@@ -370,9 +369,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				60E929FA1E33242600ABB45A /* AppDelegate.m in Sources */,
-				60E92A351E33384900ABB45A /* GKMessageTool.m in Sources */,
 				60E929F71E33242600ABB45A /* main.m in Sources */,
 				60E92A381E33386300ABB45A /* GKMessageToolDemoVC.m in Sources */,
+				60E92A3E1E333AC000ABB45A /* GKMessageTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
