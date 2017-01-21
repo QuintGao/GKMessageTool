@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		60E929F71E33242600ABB45A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E929F61E33242600ABB45A /* main.m */; };
 		60E929FA1E33242600ABB45A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E929F91E33242600ABB45A /* AppDelegate.m */; };
-		60E929FD1E33242600ABB45A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E929FC1E33242600ABB45A /* ViewController.m */; };
-		60E92A001E33242600ABB45A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60E929FE1E33242600ABB45A /* Main.storyboard */; };
 		60E92A021E33242600ABB45A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60E92A011E33242600ABB45A /* Assets.xcassets */; };
 		60E92A051E33242600ABB45A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60E92A031E33242600ABB45A /* LaunchScreen.storyboard */; };
 		60E92A101E33242600ABB45A /* GKMessageToolDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E92A0F1E33242600ABB45A /* GKMessageToolDemoTests.m */; };
 		60E92A1B1E33242600ABB45A /* GKMessageToolDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E92A1A1E33242600ABB45A /* GKMessageToolDemoUITests.m */; };
+		60E92A2F1E33382400ABB45A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60E92A2E1E33382400ABB45A /* Main.storyboard */; };
+		60E92A341E33384900ABB45A /* GKMessageTool.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 60E92A311E33384900ABB45A /* GKMessageTool.bundle */; };
+		60E92A351E33384900ABB45A /* GKMessageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E92A331E33384900ABB45A /* GKMessageTool.m */; };
+		60E92A381E33386300ABB45A /* GKMessageToolDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E92A371E33386300ABB45A /* GKMessageToolDemoVC.m */; };
+		F8EBFC637F70DC887E75C335 /* libPods-GKMessageToolDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E367409B288787BEE193E0CE /* libPods-GKMessageToolDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,13 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B6F1EA9E3390DB1CC322FD1 /* Pods-GKMessageToolDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GKMessageToolDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GKMessageToolDemo/Pods-GKMessageToolDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		60E929F21E33242600ABB45A /* GKMessageToolDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GKMessageToolDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60E929F61E33242600ABB45A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		60E929F81E33242600ABB45A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		60E929F91E33242600ABB45A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		60E929FB1E33242600ABB45A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		60E929FC1E33242600ABB45A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		60E929FF1E33242600ABB45A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		60E92A011E33242600ABB45A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		60E92A041E33242600ABB45A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		60E92A061E33242600ABB45A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +52,14 @@
 		60E92A161E33242600ABB45A /* GKMessageToolDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GKMessageToolDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		60E92A1A1E33242600ABB45A /* GKMessageToolDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKMessageToolDemoUITests.m; sourceTree = "<group>"; };
 		60E92A1C1E33242600ABB45A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60E92A2E1E33382400ABB45A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		60E92A311E33384900ABB45A /* GKMessageTool.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GKMessageTool.bundle; sourceTree = "<group>"; };
+		60E92A321E33384900ABB45A /* GKMessageTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKMessageTool.h; sourceTree = "<group>"; };
+		60E92A331E33384900ABB45A /* GKMessageTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKMessageTool.m; sourceTree = "<group>"; };
+		60E92A361E33386300ABB45A /* GKMessageToolDemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKMessageToolDemoVC.h; sourceTree = "<group>"; };
+		60E92A371E33386300ABB45A /* GKMessageToolDemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKMessageToolDemoVC.m; sourceTree = "<group>"; };
+		A6629553288BE6AE9B0997C5 /* Pods-GKMessageToolDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GKMessageToolDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-GKMessageToolDemo/Pods-GKMessageToolDemo.release.xcconfig"; sourceTree = "<group>"; };
+		E367409B288787BEE193E0CE /* libPods-GKMessageToolDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GKMessageToolDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8EBFC637F70DC887E75C335 /* libPods-GKMessageToolDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +88,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		128A57AC849AA77C5B4A3602 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3B6F1EA9E3390DB1CC322FD1 /* Pods-GKMessageToolDemo.debug.xcconfig */,
+				A6629553288BE6AE9B0997C5 /* Pods-GKMessageToolDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		60E929E91E33242600ABB45A = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +104,8 @@
 				60E92A0E1E33242600ABB45A /* GKMessageToolDemoTests */,
 				60E92A191E33242600ABB45A /* GKMessageToolDemoUITests */,
 				60E929F31E33242600ABB45A /* Products */,
+				128A57AC849AA77C5B4A3602 /* Pods */,
+				F21DAC4280487B9C01410ABD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,11 +122,12 @@
 		60E929F41E33242600ABB45A /* GKMessageToolDemo */ = {
 			isa = PBXGroup;
 			children = (
+				60E92A301E33384900ABB45A /* GKMessageTool */,
 				60E929F81E33242600ABB45A /* AppDelegate.h */,
 				60E929F91E33242600ABB45A /* AppDelegate.m */,
-				60E929FB1E33242600ABB45A /* ViewController.h */,
-				60E929FC1E33242600ABB45A /* ViewController.m */,
-				60E929FE1E33242600ABB45A /* Main.storyboard */,
+				60E92A361E33386300ABB45A /* GKMessageToolDemoVC.h */,
+				60E92A371E33386300ABB45A /* GKMessageToolDemoVC.m */,
+				60E92A2E1E33382400ABB45A /* Main.storyboard */,
 				60E92A011E33242600ABB45A /* Assets.xcassets */,
 				60E92A031E33242600ABB45A /* LaunchScreen.storyboard */,
 				60E92A061E33242600ABB45A /* Info.plist */,
@@ -140,6 +162,25 @@
 			path = GKMessageToolDemoUITests;
 			sourceTree = "<group>";
 		};
+		60E92A301E33384900ABB45A /* GKMessageTool */ = {
+			isa = PBXGroup;
+			children = (
+				60E92A311E33384900ABB45A /* GKMessageTool.bundle */,
+				60E92A321E33384900ABB45A /* GKMessageTool.h */,
+				60E92A331E33384900ABB45A /* GKMessageTool.m */,
+			);
+			name = GKMessageTool;
+			path = ../../GKMessageTool;
+			sourceTree = "<group>";
+		};
+		F21DAC4280487B9C01410ABD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E367409B288787BEE193E0CE /* libPods-GKMessageToolDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +188,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 60E92A1F1E33242600ABB45A /* Build configuration list for PBXNativeTarget "GKMessageToolDemo" */;
 			buildPhases = (
+				3DD1AE3E636C24105D0EE51B /* [CP] Check Pods Manifest.lock */,
 				60E929EE1E33242600ABB45A /* Sources */,
 				60E929EF1E33242600ABB45A /* Frameworks */,
 				60E929F01E33242600ABB45A /* Resources */,
+				A8FF10750912CD7AF2018F5A /* [CP] Embed Pods Frameworks */,
+				A7823839B6A6AC5D7D038D8C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,8 +294,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				60E92A051E33242600ABB45A /* LaunchScreen.storyboard in Resources */,
+				60E92A341E33384900ABB45A /* GKMessageTool.bundle in Resources */,
 				60E92A021E33242600ABB45A /* Assets.xcassets in Resources */,
-				60E92A001E33242600ABB45A /* Main.storyboard in Resources */,
+				60E92A2F1E33382400ABB45A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,14 +316,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3DD1AE3E636C24105D0EE51B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A7823839B6A6AC5D7D038D8C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GKMessageToolDemo/Pods-GKMessageToolDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8FF10750912CD7AF2018F5A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GKMessageToolDemo/Pods-GKMessageToolDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		60E929EE1E33242600ABB45A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60E929FD1E33242600ABB45A /* ViewController.m in Sources */,
 				60E929FA1E33242600ABB45A /* AppDelegate.m in Sources */,
+				60E92A351E33384900ABB45A /* GKMessageTool.m in Sources */,
 				60E929F71E33242600ABB45A /* main.m in Sources */,
+				60E92A381E33386300ABB45A /* GKMessageToolDemoVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,14 +408,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		60E929FE1E33242600ABB45A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				60E929FF1E33242600ABB45A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		60E92A031E33242600ABB45A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -423,10 +509,12 @@
 		};
 		60E92A201E33242600ABB45A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B6F1EA9E3390DB1CC322FD1 /* Pods-GKMessageToolDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = L2QPTUE76B;
 				INFOPLIST_FILE = GKMessageToolDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bykj.gk.GKMessageToolDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -435,10 +523,12 @@
 		};
 		60E92A211E33242600ABB45A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6629553288BE6AE9B0997C5 /* Pods-GKMessageToolDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = L2QPTUE76B;
 				INFOPLIST_FILE = GKMessageToolDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bykj.gk.GKMessageToolDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -514,6 +604,7 @@
 				60E92A211E33242600ABB45A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		60E92A221E33242600ABB45A /* Build configuration list for PBXNativeTarget "GKMessageToolDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +613,7 @@
 				60E92A241E33242600ABB45A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		60E92A251E33242600ABB45A /* Build configuration list for PBXNativeTarget "GKMessageToolDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +622,7 @@
 				60E92A271E33242600ABB45A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

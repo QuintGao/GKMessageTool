@@ -43,7 +43,7 @@
             [GKMessageTool showMessage:@"加载中..."];
             
             // 模拟加载
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 
                 [GKMessageTool hideMessage];
                 
@@ -56,7 +56,7 @@
             [GKMessageTool showMessage:@"加载中..." toView:self.view];
             
             // 模拟加载
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [GKMessageTool hideMessage];
                 
                 [GKMessageTool showError:@"加载失败" toView:self.view];
