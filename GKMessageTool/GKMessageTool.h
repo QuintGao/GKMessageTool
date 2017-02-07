@@ -33,6 +33,13 @@
 
 
 /**
+ 显示提示
+ */
++ (void)showTips:(NSString *)tips;
++ (void)showTips:(NSString *)tips toView:(UIView *)toView;
+
+
+/**
  显示加载中
  */
 + (void)showMessage:(NSString *)message;

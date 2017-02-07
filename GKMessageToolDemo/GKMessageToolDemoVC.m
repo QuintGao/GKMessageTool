@@ -38,7 +38,13 @@
         case 3:   // 在当前视图上显示失败
             [GKMessageTool showError:@"请求失败" toView:self.view];
             break;
-        case 4:   // 在window上显示加载中
+        case 4:   // 在window上显示提示
+            [GKMessageTool showTips:@"加载成功"];
+            break;
+        case 5:   // 在当前视图上显示提示
+            [GKMessageTool showTips:@"加载成功" toView:self.view];
+            break;
+        case 6:   // 在window上显示加载中
         {
             [GKMessageTool showMessage:@"加载中..."];
             
@@ -51,7 +57,7 @@
             });
         }
             break;
-        case 5:   // 在当前视图上显示加载中
+        case 7:   // 在当前视图上显示加载中
         {
             [GKMessageTool showMessage:@"加载中..." toView:self.view];
             
@@ -63,7 +69,7 @@
             });
         }
             break;
-        case 6:   // 隐藏加载中
+        case 8:   // 隐藏加载中
             [GKMessageTool hideMessage];
             break;
         default:

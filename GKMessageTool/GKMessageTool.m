@@ -57,6 +57,18 @@ static MBProgressHUD *_hud;
     [kMessageTool showMessage:error toView:toView isSuccess:NO];
 }
 
++ (void)showTips:(NSString *)tips
+{
+    NSString *imageName = [NSString stringWithFormat:@"GKMessageTool.bundle/%@", @"info_white.png"];
+    [kMessageTool showMessage:tips toView:nil imageName:imageName];
+}
+
++ (void)showTips:(NSString *)tips toView:(UIView *)toView
+{
+    NSString *imageName = [NSString stringWithFormat:@"GKMessageTool.bundle/%@", @"info_white.png"];
+    [kMessageTool showMessage:tips toView:toView imageName:imageName];
+}
+
 + (void)showMessage:(NSString *)message
 {
     _hud = [self showLoadMessage:message toView:nil];
@@ -105,6 +117,13 @@ static MBProgressHUD *_hud;
 
 - (void)showMessage:(NSString *)message toView:(UIView *)toView isSuccess:(BOOL)success
 {
+    NSString *imageName = [NSString stringWithFormat:@"GKMessageTool.bundle/%@",success ? @"success_white.png" : @"error_white.png"];
+    
+    [self showMessage:message toView:toView imageName:imageName];
+}
+
+- (void)showMessage:(NSString *)message toView:(UIView *)toView imageName:(NSString *)imageName
+{
     if (self.showMessage) [self.showMessage removeFromSuperview];
     
     if (!toView) toView = [self getTopLevelWindow];
@@ -116,7 +135,6 @@ static MBProgressHUD *_hud;
     // 隐藏时从父控件中移除
     self.showMessage.removeFromSuperViewOnHide = YES;
     // 设置将要显示的图片
-    NSString *imageName = [NSString stringWithFormat:@"GKMessageTool.bundle/%@",success ? @"success_white.png" : @"error_white.png"];
     UIImage *image = [UIImage imageNamed:imageName];
     // 设置自定义视图
     self.showMessage.customView = [[UIImageView alloc] initWithImage:image];
@@ -131,8 +149,6 @@ static MBProgressHUD *_hud;
     
     [self performSelectorOnMainThread:@selector(hideMessage) withObject:nil waitUntilDone:YES];
 }
-
-
 
 - (void)showLoadMessage:(NSString *)message toView:(UIView *)toView
 {
