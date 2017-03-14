@@ -81,7 +81,24 @@ static MBProgressHUD *_hud;
 
 + (MBProgressHUD *)showLoadMessage:(NSString *)message toView:(UIView *)toView
 {
-    [kMessageTool showLoadMessage:message toView:toView];
+    [kMessageTool showLoadMessage:message toView:toView canClick:YES];
+    
+    return kMessageTool.showMessage;
+}
+
++ (void)showNoClickMessage:(NSString *)message
+{
+    _hud = [self showNoClickLoadMessage:message toView:nil];
+}
+
++ (void)showNoClickMessage:(NSString *)message toView:(UIView *)toView
+{
+    _hud = [self showNoClickLoadMessage:message toView:toView];
+}
+
++ (MBProgressHUD *)showNoClickLoadMessage:(NSString *)message toView:(UIView *)toView
+{
+    [kMessageTool showLoadMessage:message toView:toView canClick:NO];
     
     return kMessageTool.showMessage;
 }
@@ -150,13 +167,14 @@ static MBProgressHUD *_hud;
     [self performSelectorOnMainThread:@selector(hideMessage) withObject:nil waitUntilDone:YES];
 }
 
-- (void)showLoadMessage:(NSString *)message toView:(UIView *)toView
+- (void)showLoadMessage:(NSString *)message toView:(UIView *)toView canClick:(BOOL)canClick
 {
     if (self.showMessage) [self.showMessage removeFromSuperview];
     if (!toView) toView = [self getTopLevelWindow];
     
     // 创建hud
     self.showMessage = [MBProgressHUD showHUDAddedTo:toView animated:YES];
+    self.showMessage.userInteractionEnabled = canClick;
     // 设置背景颜色和圆角
     self.showMessage.bezelView.color = [UIColor blackColor];
     self.showMessage.bezelView.layer.cornerRadius = 10.0;

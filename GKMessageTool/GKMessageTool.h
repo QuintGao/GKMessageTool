@@ -45,6 +45,9 @@
 + (void)showMessage:(NSString *)message;
 + (void)showMessage:(NSString *)message toView:(UIView *)toView;
 
++ (void)showNoClickMessage:(NSString *)message;
++ (void)showNoClickMessage:(NSString *)message toView:(UIView *)toView;
+
 
 /**
  隐藏加载中
