@@ -18,15 +18,13 @@ static MBProgressHUD *_hud;
 
 @implementation GKMessageTool
 
-+ (void)load
-{
++ (void)load {
     UIActivityIndicatorView *indicatorView = [UIActivityIndicatorView appearanceWhenContainedIn:[MBProgressHUD class], nil];
     // 设置指示器颜色
     indicatorView.color = [UIColor whiteColor];
 }
 
-+ (instancetype)shareInstance
-{
++ (instancetype)shareInstance {
     static GKMessageTool *tool = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -37,74 +35,77 @@ static MBProgressHUD *_hud;
 
 #pragma mark - Public Method
 
-+ (void)showSuccess:(NSString *)success
-{
++ (void)showSuccess:(NSString *)success {
     [kMessageTool showMessage:success toView:nil isSuccess:YES];
 }
 
-+ (void)showSuccess:(NSString *)success toView:(UIView *)toView
-{
++ (void)showSuccess:(NSString *)success toView:(UIView *)toView {
     [kMessageTool showMessage:success toView:toView isSuccess:YES];
 }
 
-+ (void)showError:(NSString *)error
-{
++ (void)showSuccess:(NSString *)success imageName:(NSString *)imageName {
+    [kMessageTool showMessage:success toView:nil imageName:imageName];
+}
+
++ (void)showSuccess:(NSString *)success toView:(UIView *)toView imageName:(NSString *)imageName {
+    [kMessageTool showMessage:success toView:toView imageName:imageName];
+}
+
++ (void)showError:(NSString *)error {
     [kMessageTool showMessage:error toView:nil isSuccess:NO];
 }
 
-+ (void)showError:(NSString *)error toView:(UIView *)toView
-{
++ (void)showError:(NSString *)error toView:(UIView *)toView {
     [kMessageTool showMessage:error toView:toView isSuccess:NO];
 }
 
-+ (void)showTips:(NSString *)tips
-{
++ (void)showError:(NSString *)error imageName:(NSString *)imageName {
+    [kMessageTool showMessage:error toView:nil imageName:imageName];
+}
+
++ (void)showError:(NSString *)error toView:(UIView *)toView imageName:(NSString *)imageName {
+    [kMessageTool showMessage:error toView:toView imageName:imageName];
+}
+
++ (void)showTips:(NSString *)tips {
     NSString *imageName = [NSString stringWithFormat:@"GKMessageTool.bundle/%@", @"info_white.png"];
     [kMessageTool showMessage:tips toView:nil imageName:imageName];
 }
 
-+ (void)showTips:(NSString *)tips toView:(UIView *)toView
-{
++ (void)showTips:(NSString *)tips toView:(UIView *)toView {
     NSString *imageName = [NSString stringWithFormat:@"GKMessageTool.bundle/%@", @"info_white.png"];
     [kMessageTool showMessage:tips toView:toView imageName:imageName];
 }
 
-+ (void)showMessage:(NSString *)message
-{
++ (void)showMessage:(NSString *)message {
     _hud = [self showLoadMessage:message toView:nil];
 }
 
-+ (void)showMessage:(NSString *)message toView:(UIView *)toView
-{
++ (void)showMessage:(NSString *)message toView:(UIView *)toView {
     _hud = [self showLoadMessage:message toView:toView];
 }
 
-+ (MBProgressHUD *)showLoadMessage:(NSString *)message toView:(UIView *)toView
-{
++ (MBProgressHUD *)showLoadMessage:(NSString *)message toView:(UIView *)toView {
     [kMessageTool showLoadMessage:message toView:toView canClick:YES];
     
     return kMessageTool.showMessage;
 }
 
-+ (void)showNoClickMessage:(NSString *)message
-{
++ (void)showNoClickMessage:(NSString *)message {
     _hud = [self showNoClickLoadMessage:message toView:nil];
 }
 
-+ (void)showNoClickMessage:(NSString *)message toView:(UIView *)toView
-{
++ (void)showNoClickMessage:(NSString *)message toView:(UIView *)toView {
     _hud = [self showNoClickLoadMessage:message toView:toView];
 }
 
-+ (MBProgressHUD *)showNoClickLoadMessage:(NSString *)message toView:(UIView *)toView
-{
++ (MBProgressHUD *)showNoClickLoadMessage:(NSString *)message toView:(UIView *)toView {
     [kMessageTool showLoadMessage:message toView:toView canClick:NO];
     
     return kMessageTool.showMessage;
 }
 
-+ (void)hideMessage
-{
++ (void)hideMessage {
     [_hud hideAnimated:YES];
 }
 
@@ -113,8 +114,7 @@ static MBProgressHUD *_hud;
 /**
  获取当前最顶层的window
  */
-- (UIWindow *)getTopLevelWindow
-{
+- (UIWindow *)getTopLevelWindow {
     UIWindow *window = nil;
     for (UIWindow *_window in [UIApplication sharedApplication].windows) {
         if (window == nil) {
@@ -127,20 +127,17 @@ static MBProgressHUD *_hud;
     return window;
 }
 
-- (void)hideMessage
-{
+- (void)hideMessage {
     [self.showMessage hideAnimated:YES afterDelay:1.0];
 }
 
-- (void)showMessage:(NSString *)message toView:(UIView *)toView isSuccess:(BOOL)success
-{
+- (void)showMessage:(NSString *)message toView:(UIView *)toView isSuccess:(BOOL)success {
     NSString *imageName = [NSString stringWithFormat:@"GKMessageTool.bundle/%@",success ? @"success_white.png" : @"error_white.png"];
     
     [self showMessage:message toView:toView imageName:imageName];
 }
 
-- (void)showMessage:(NSString *)message toView:(UIView *)toView imageName:(NSString *)imageName
-{
+- (void)showMessage:(NSString *)message toView:(UIView *)toView imageName:(NSString *)imageName {
     if (self.showMessage) [self.showMessage removeFromSuperview];
     
     if (!toView) toView = [self getTopLevelWindow];
@@ -167,8 +164,7 @@ static MBProgressHUD *_hud;
     [self performSelectorOnMainThread:@selector(hideMessage) withObject:nil waitUntilDone:YES];
 }
 
-- (void)showLoadMessage:(NSString *)message toView:(UIView *)toView canClick:(BOOL)canClick
-{
+- (void)showLoadMessage:(NSString *)message toView:(UIView *)toView canClick:(BOOL)canClick {
     if (self.showMessage) [self.showMessage removeFromSuperview];
     if (!toView) toView = [self getTopLevelWindow];
     

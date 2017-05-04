@@ -23,6 +23,8 @@
  */
 + (void)showSuccess:(NSString *)success;
 + (void)showSuccess:(NSString *)success toView:(UIView *)toView;
++ (void)showSuccess:(NSString *)success imageName:(NSString *)imageName;
++ (void)showSuccess:(NSString *)success toView:(UIView *)toView imageName:(NSString *)imageName;
 
 
 /**
@@ -30,7 +32,8 @@
  */
 + (void)showError:(NSString *)error;
 + (void)showError:(NSString *)error toView:(UIView *)toView;
-
++ (void)showError:(NSString *)error imageName:(NSString *)imageName;
++ (void)showError:(NSString *)error toView:(UIView *)toView imageName:(NSString *)imageName;
 
 /**
  显示提示
