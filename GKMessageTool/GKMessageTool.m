@@ -34,6 +34,20 @@ static MBProgressHUD *_hud;
 }
 
 #pragma mark - Public Method
+/**
+ 显示文字
+ */
++ (void)showText:(NSString *)text {
+    [kMessageTool showText:text toView:nil bgColor:nil];
+}
+
++ (void)showText:(NSString *)text toView:(UIView *)toView {
+    [kMessageTool showText:text toView:toView bgColor:nil];
+}
+
++ (void)showText:(NSString *)text toView:(UIView *)toView bgColor:(UIColor *)color {
+    [kMessageTool showText:text toView:toView bgColor:color];
+}
 
 + (void)showSuccess:(NSString *)success {
     [kMessageTool showMessage:success toView:nil isSuccess:YES];
@@ -44,11 +58,15 @@ static MBProgressHUD *_hud;
 }
 
 + (void)showSuccess:(NSString *)success imageName:(NSString *)imageName {
-    [kMessageTool showMessage:success toView:nil imageName:imageName];
+    [kMessageTool showMessage:success toView:nil imageName:imageName bgColor:nil];
 }
 
 + (void)showSuccess:(NSString *)success toView:(UIView *)toView imageName:(NSString *)imageName {
-    [kMessageTool showMessage:success toView:toView imageName:imageName];
+    [kMessageTool showMessage:success toView:toView imageName:imageName bgColor:nil];
+}
+
++ (void)showSuccess:(NSString *)success toView:(UIView *)toView imageName:(NSString *)imageName bgColor:(UIColor *)bgColor {
+    [kMessageTool showMessage:success toView:toView imageName:imageName bgColor:bgColor];
 }
 
 + (void)showError:(NSString *)error {
@@ -60,21 +78,25 @@ static MBProgressHUD *_hud;
 }
 
 + (void)showError:(NSString *)error imageName:(NSString *)imageName {
-    [kMessageTool showMessage:error toView:nil imageName:imageName];
+    [kMessageTool showMessage:error toView:nil imageName:imageName bgColor:nil];
 }
 
 + (void)showError:(NSString *)error toView:(UIView *)toView imageName:(NSString *)imageName {
-    [kMessageTool showMessage:error toView:toView imageName:imageName];
+    [kMessageTool showMessage:error toView:toView imageName:imageName bgColor:nil];
+}
+
++ (void)showError:(NSString *)error toView:(UIView *)toView imageName:(NSString *)imageName bgColor:(UIColor *)color {
+    [kMessageTool showMessage:error toView:toView imageName:imageName bgColor:color];
 }
 
 + (void)showTips:(NSString *)tips {
     NSString *imageName = [NSString stringWithFormat:@"GKMessageTool.bundle/%@", @"info_white.png"];
-    [kMessageTool showMessage:tips toView:nil imageName:imageName];
+    [kMessageTool showMessage:tips toView:nil imageName:imageName bgColor:nil];
 }
 
 + (void)showTips:(NSString *)tips toView:(UIView *)toView {
     NSString *imageName = [NSString stringWithFormat:@"GKMessageTool.bundle/%@", @"info_white.png"];
-    [kMessageTool showMessage:tips toView:toView imageName:imageName];
+    [kMessageTool showMessage:tips toView:toView imageName:imageName bgColor:nil];
 }
 
 + (void)showMessage:(NSString *)message {
@@ -115,16 +137,17 @@ static MBProgressHUD *_hud;
  获取当前最顶层的window
  */
 - (UIWindow *)getTopLevelWindow {
-    UIWindow *window = nil;
-    for (UIWindow *_window in [UIApplication sharedApplication].windows) {
-        if (window == nil) {
-            window = _window;
-        }
-        if (_window.windowLevel > window.windowLevel) {
-            window = _window;
-        }
-    }
-    return window;
+//    UIWindow *window = nil;
+//    for (UIWindow *_window in [UIApplication sharedApplication].windows) {
+//        if (window == nil) {
+//            window = _window;
+//        }
+//        if (_window.windowLevel > window.windowLevel) {
+//            window = _window;
+//        }
+//    }
+//    return window;
+    return [UIApplication sharedApplication].keyWindow;
 }
 
 - (void)hideMessage {
@@ -134,10 +157,34 @@ static MBProgressHUD *_hud;
 - (void)showMessage:(NSString *)message toView:(UIView *)toView isSuccess:(BOOL)success {
     NSString *imageName = [NSString stringWithFormat:@"GKMessageTool.bundle/%@",success ? @"success_white.png" : @"error_white.png"];
     
-    [self showMessage:message toView:toView imageName:imageName];
+    [self showMessage:message toView:toView imageName:imageName bgColor:nil];
 }
 
-- (void)showMessage:(NSString *)message toView:(UIView *)toView imageName:(NSString *)imageName {
+- (void)showText:(NSString *)text toView:(UIView *)toView bgColor:(UIColor *)bgColor {
+    if (self.showMessage) [self.showMessage removeFromSuperview];
+    
+    if (!toView) toView = [self getTopLevelWindow];
+    
+    // 创建指示器
+    self.showMessage = [MBProgressHUD showHUDAddedTo:toView animated:YES];
+    
+    // 设置text模式
+    self.showMessage.mode = MBProgressHUDModeText;
+    // 隐藏时从父控件中移除
+    self.showMessage.removeFromSuperViewOnHide = YES;
+    // 设置背景色
+    self.showMessage.bezelView.color = bgColor ? bgColor : [UIColor blackColor];
+    self.showMessage.bezelView.layer.cornerRadius = 10.0;
+    
+    // 设置文字属性
+    self.showMessage.label.text      = text;
+    self.showMessage.label.font      = [UIFont systemFontOfSize:14.0];
+    self.showMessage.label.textColor = [UIColor whiteColor];
+    
+    [self performSelectorOnMainThread:@selector(hideMessage) withObject:nil waitUntilDone:YES];
+}
+
+- (void)showMessage:(NSString *)message toView:(UIView *)toView imageName:(NSString *)imageName bgColor:(UIColor *)bgColor{
     if (self.showMessage) [self.showMessage removeFromSuperview];
     
     if (!toView) toView = [self getTopLevelWindow];
@@ -153,7 +200,7 @@ static MBProgressHUD *_hud;
     // 设置自定义视图
     self.showMessage.customView = [[UIImageView alloc] initWithImage:image];
     // 设置bezelView背景色
-    self.showMessage.bezelView.color = [UIColor blackColor];
+    self.showMessage.bezelView.color = bgColor ? bgColor : [UIColor blackColor];
     self.showMessage.bezelView.layer.cornerRadius = 10.0;
     
     // 设置显示的文字内容
@@ -178,30 +225,5 @@ static MBProgressHUD *_hud;
     self.showMessage.label.text = message;
     self.showMessage.label.textColor = [UIColor whiteColor];
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @end

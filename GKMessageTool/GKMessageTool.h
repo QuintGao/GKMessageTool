@@ -19,12 +19,20 @@
 + (instancetype)shareInstance;
 
 /**
+ 显示文字
+ */
++ (void)showText:(NSString *)text;
++ (void)showText:(NSString *)text toView:(UIView *)toView;
++ (void)showText:(NSString *)text toView:(UIView *)toView bgColor:(UIColor *)color;
+
+/**
  显示成功
  */
 + (void)showSuccess:(NSString *)success;
 + (void)showSuccess:(NSString *)success toView:(UIView *)toView;
 + (void)showSuccess:(NSString *)success imageName:(NSString *)imageName;
 + (void)showSuccess:(NSString *)success toView:(UIView *)toView imageName:(NSString *)imageName;
++ (void)showSuccess:(NSString *)success toView:(UIView *)toView imageName:(NSString *)imageName bgColor:(UIColor *)bgColor;
 
 
 /**
@@ -34,6 +42,7 @@
 + (void)showError:(NSString *)error toView:(UIView *)toView;
 + (void)showError:(NSString *)error imageName:(NSString *)imageName;
 + (void)showError:(NSString *)error toView:(UIView *)toView imageName:(NSString *)imageName;
++ (void)showError:(NSString *)error toView:(UIView *)toView imageName:(NSString *)imageName bgColor:(UIColor *)color;
 
 /**
  显示提示
