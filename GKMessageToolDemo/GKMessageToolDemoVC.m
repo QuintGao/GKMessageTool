@@ -8,8 +8,15 @@
 
 #import "GKMessageToolDemoVC.h"
 #import "GKMessageTool.h"
+#import "GKLoadingView.h"
 
 @interface GKMessageToolDemoVC ()
+
+@property (nonatomic, strong) UIView        *customView;
+@property (nonatomic, strong) GKLoadingView *loadingView;
+
+@property (nonatomic, strong) NSTimer   *timer;
+@property (nonatomic, assign) float     progress;
 
 @end
 
@@ -69,12 +76,50 @@
             });
         }
             break;
-        case 8:   // 隐藏加载中
+        case 8:   // 显示自定义视图
+        {
+            self.loadingView = [GKLoadingView loadingViewWithFrame:CGRectMake(0, 0, 50, 50) style:GKLoadingStyleDeterminate];
+            self.loadingView.bgColor       = [UIColor grayColor];
+            self.loadingView.strokeColor   = [UIColor whiteColor];
+            self.loadingView.lineWidth     = 4;
+            self.loadingView.radius        = 30;
+            [self.loadingView.centerButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            self.loadingView.progressChange = ^(GKLoadingView *loadingView, CGFloat progress) {
+                NSString *text = [NSString stringWithFormat:@"%.f%%", progress * 100];
+                [loadingView.centerButton setTitle:text forState:UIControlStateNormal];
+            };
+            [GKMessageTool showCustomView:self.loadingView text:@"素材加载中..."];
+            
+            self.timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateProgress:) userInfo:nil repeats:YES];
+            
+            NSLayoutConstraint*customViewWidthConstraint = [NSLayoutConstraint constraintWithItem:self.loadingView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.f constant:50.f];
+            
+            NSLayoutConstraint*customViewHeightConstraint = [NSLayoutConstraint constraintWithItem:self.loadingView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.f constant:70.f];
+            [self.loadingView addConstraint:customViewWidthConstraint];
+            [self.loadingView addConstraint:customViewHeightConstraint];
+        }
+            break;
+        case 9:   // 隐藏加载中
             [GKMessageTool hideMessage];
             break;
         default:
             break;
     }
+}
+
+- (void)updateProgress:(id)sender {
+    self.progress += 0.01;
+    
+    if (self.progress >= 1.0f) {
+        self.progress = 1.0f;
+        
+        [self.timer invalidate];
+        self.timer = nil;
+        
+        [GKMessageTool hideMessage];
+    }
+    
+    self.loadingView.loadProgress = self.progress;
 }
 
 @end
