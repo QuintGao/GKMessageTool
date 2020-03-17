@@ -1,12 +1,16 @@
 PODS:
-  - MBProgressHUD (1.0.0)
+  - MBProgressHUD (1.2.0)
 
 DEPENDENCIES:
   - MBProgressHUD
 
+SPEC REPOS:
+  trunk:
+    - MBProgressHUD
+
 SPEC CHECKSUMS:
-  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
 
 PODFILE CHECKSUM: c6df422c0ebfd92685e879133d0643bd985066bd
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.9.1

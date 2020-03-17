@@ -145,16 +145,6 @@ static MBProgressHUD *_hud;
  获取当前最顶层的window
  */
 - (UIWindow *)getTopLevelWindow {
-//    UIWindow *window = nil;
-//    for (UIWindow *_window in [UIApplication sharedApplication].windows) {
-//        if (window == nil) {
-//            window = _window;
-//        }
-//        if (_window.windowLevel > window.windowLevel) {
-//            window = _window;
-//        }
-//    }
-//    return window;
     return [UIApplication sharedApplication].keyWindow;
 }
 
@@ -180,7 +170,8 @@ static MBProgressHUD *_hud;
     self.showMessage.mode = MBProgressHUDModeText;
     // 隐藏时从父控件中移除
     self.showMessage.removeFromSuperViewOnHide = YES;
-    // 设置背景色
+    // 设置背景色，设置为纯色背景
+    self.showMessage.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
     self.showMessage.bezelView.color = bgColor ? bgColor : [UIColor blackColor];
     self.showMessage.bezelView.layer.cornerRadius = 10.0;
     
@@ -208,6 +199,7 @@ static MBProgressHUD *_hud;
     // 设置自定义视图
     self.showMessage.customView = [[UIImageView alloc] initWithImage:image];
     // 设置bezelView背景色
+    self.showMessage.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
     self.showMessage.bezelView.color = bgColor ? bgColor : [UIColor blackColor];
     self.showMessage.bezelView.layer.cornerRadius = 10.0;
     
@@ -227,6 +219,7 @@ static MBProgressHUD *_hud;
     self.showMessage = [MBProgressHUD showHUDAddedTo:toView animated:YES];
     self.showMessage.userInteractionEnabled = canClick;
     // 设置背景颜色和圆角
+    self.showMessage.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
     self.showMessage.bezelView.color = [UIColor blackColor];
     self.showMessage.bezelView.layer.cornerRadius = 10.0;
     // 设置文字内容和颜色
